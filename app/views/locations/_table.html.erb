@@ -28,9 +28,9 @@
         <td> $ <%= d.price %> </td>
         
         <% if d.paid %>
-          <td> <%= link_to '- Paid -', status_location_daily_path(@location, d), class: "btn btn-success" %> </td>
+          <td> <%= link_to '- Paid -', status_location_daily_path(@location, d), class: "btn btn-sm btn-success" %> </td>
         <% else %>
-          <td> <%= link_to 'Unpaid', status_location_daily_path(@location, d), class: "btn btn-danger" %> </td>
+          <td> <%= link_to 'Unpaid', status_location_daily_path(@location, d), class: "btn btn-sm btn-danger" %> </td>
         <% end %>
 
         <td> <%= User.find(d.user_id).username %> </td>
