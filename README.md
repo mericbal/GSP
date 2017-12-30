@@ -22,3 +22,13 @@ rails g devise User
 # Made some changes in the devise.rb
 
 
+
+
+# Deployed to Heroku
+
+gsparking.herokuapp.com
+
+heroku git:remote -a gsparking
+heroku run rake db:migrate
+heroku run rake db:seed
+

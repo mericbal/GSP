@@ -1,0 +1,14 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header"> 
+      	<h4> Are you sure you want to log out ? </h4>
+      </div>
+      <div class="modal-footer">
+      	<%= link_to 'Cancel', '', data: { dismiss: 'modal' }, class: 'btn btn-danger' %>
+        <%= link_to 'Yes', destroy_user_session_path, method: :delete, class: 'btn btn-success' %>`
+      </div>
+    </div>
+  </div>
+</div>

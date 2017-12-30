@@ -1,20 +1,21 @@
 <div class="container">
-<% if !current_user %>
-	<br />
-	<br>
-	<p id="blue"> <%= link_to 'Log in', new_user_session_path, class: 'btn btn-primary btn-lg btn-block' %> </p>
-<% else %>
-	<h2 style="text-align: center" > Welcome , <span id="red"> <%= current_user.username %> </span> ! </h2>
-	<br />
 
-	<p id=""> Choose a location please .. </p>
-	<br>
-
-	<% @locations.each do |l| %>
-		<p> <%= link_to "#{l.name}", location_path(l.id), class: "btn btn-success btn-lg btn-block" %> </p>
+	<% if !current_user %>
+		<br />
 		<br>
-	<% end %>
+		<p id="blue"> <%= link_to 'Log in', new_user_session_path, class: 'btn btn-primary btn-lg btn-block' %> </p>
+	<% else %>
+		<h2 style="text-align: center" > Welcome , <span id="red"> <%= current_user.username %> </span> ! </h2>
+		<br />
 
-<% end %>
+		<p id=""> Choose a location please .. </p>
+		<br>
+
+		<% @locations.each do |l| %>
+			<p> <%= link_to "#{l.name}", location_path(l.id), class: "btn btn-success btn-lg btn-block" %> </p>
+			<br>
+		<% end %>
+
+	<% end %>
 
 </div>
