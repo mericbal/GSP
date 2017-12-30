@@ -17,16 +17,16 @@ User.create(username: 'erkan', email: 'erkan@admin.com', password: 'cakir')
 User.create(username: 'sahir', email: 'sahir@admin.com', password: '1234')
 
 
-Location.create(name: '17th Street')
-Location.create(name: '469 Eddy')
-Location.create(name: '21st & Capp St')
+Location.create(name: '3434 17th Street')
+Location.create(name: '469 Eddy Street')
+Location.create(name: '21st & Capp Street')
 
 colors = %w( Blue Black Red Gray Silver Yellow Green Gold )
 makes = %w( Honda Toyota BMW Mercedes Ford Cadillac Hyundai Kia Nissan Chevy Subaru Acura )
 
 
 100.times do |i|
-	Daily.create(color: colors.sample, make: makes.sample, ticket_no: "180-7#{i}", price: 15, user_id: 1, location_id: rand(1..3), paid: false)
+	Daily.create(color: colors.sample, make: makes.sample, ticket_no: "180-777", price: 15, user_id: 1, location_id: rand(1..3), paid: false)
 end
 
 
