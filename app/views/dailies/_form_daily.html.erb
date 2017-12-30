@@ -1,0 +1,58 @@
+<%= form_for [@location, @daily], class: 'form-inline' do |f| %>
+		
+		<div class="row">
+	    <div class="field form-group col-md-3">
+				<%= f.label 'Ticket #' %>
+				<small class="text-muted"> enter the ticket number </small>
+				<%= f.text_field :ticket_no, class: 'form-control' %>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="field form-group col-md-4">
+				<%= f.label 'Make' %>
+				<small class="text-muted"> Min 3 characters</small> <span id="red"> * </span>
+				<%= f.text_field :make, autofocus: true, class: 'form-control mx-sm-3' %>
+			</div>
+			
+	    <div class="field form-group col-md-4">
+				<%= f.label 'color' %>
+				<small class="text-muted"> Min 3 characters</small> <span id="red"> * </span>
+				<%= f.text_field :color, class: 'form-control' %>
+			</div>
+		</div>
+
+		<div class="row col-auto">			
+	    <div class="field form-group col-md-2">
+				<%= f.label 'price' %> <span id="red"> * </span>
+				<div class="input-group mb-2 mb-sm-0">
+					<div class="input-group-addon">$</div>
+					<%= f.number_field :price, class: 'form-control' %>
+				</div>
+			</div>
+		</div>
+
+		<fieldset disabled>
+			<div class="row">
+					<div class="field form-group col-md-6">
+						<%= f.label 'Will be added by user ?' %>
+						<small class="text-muted"> to check </small>
+						<%= f.text_field :user_id, placeholder: current_user.username, class: 'form-control' %>
+				</div>
+			</div>
+		</fieldset>
+
+		<p id="red"> * fields required </p>
+
+		<br>
+
+		<div class="field form-check">
+			<%= f.label 'paid', class: 'form-check-label' %>
+			<%= f.check_box :paid, class: 'form-check-input' %>
+		</div>
+
+		<br>
+			<%= f.submit class: 'btn btn-lg btn-block btn-success' %>
+		<br>
+
+	<% end %>

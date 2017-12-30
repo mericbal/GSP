@@ -1,0 +1,50 @@
+<style type="text/css">
+  th,td { text-align: center; }
+</style>
+
+<table class="table table-hover table-bordered table-responsive">
+    <thead class="thead-dark">
+      <tr class="info">
+        <th style="width: 1px"> NO </th>
+        <th style="width: 2px"> <%= link_to 'Ticket Number', sort: 'ticket_no' %> </th>
+        <th style="width: 5px"> <%= link_to 'Color', sort: 'color' %> </th>
+        <th style="width: 5px"> <%= link_to 'Make', sort: 'make' %> </th>
+        <th style="width: 5px"> <%= link_to 'Price', sort: 'price' %> </th>
+        <th style="width: 5px"> <%= link_to 'Paid ?', sort: 'paid' %></th>
+        <th style="width: 5px"> <%= link_to 'Added by User', sort: 'user_id' %> </th>
+        <th style="width: 2px"> Edit / Delete </th>
+      </tr>
+    </thead>
+
+    <% @dailies.each.with_index(1) do |d,i| %>
+      <tbody>
+      <% if d.paid %> <tr class="success"> <% else %> <tr class="danger"> <% end %>
+        
+        <td> <%= i %> </td>
+
+        <td> <%= d.ticket_no %> </td>
+        <td> <%= d.color %> </td>
+        <td> <%= d.make %> </td>
+        <td> $ <%= d.price %> </td>
+        
+        <% if d.paid %>
+          <td> <%= link_to '- Paid -', status_location_daily_path(@location, d), class: "btn btn-success" %> </td>
+        <% else %>
+          <td> <%= link_to 'Unpaid', status_location_daily_path(@location, d), class: "btn btn-danger" %> </td>
+        <% end %>
+
+        <td> <%= User.find(d.user_id).username %> </td>
+        <td> 
+        <% if d.user_id == current_user.id %>
+          <%= link_to 'E', edit_location_daily_path(@location, d), class: 'btn btn-xs btn-info' %>
+          <%= link_to 'D', location_daily_path(@location, d), method: :delete, data: { confirm: "Are you sure to delete ? \n \n#{d.color} #{d.make} with a ticket number #{d.ticket_no} ?" }, class: 'btn btn-xs btn-danger' %> 
+        <% else %>
+          <i id="red"> N / A </i>   
+        <% end %>
+        </td>
+
+      </tr>
+    <% end %>
+    </tbody>
+
+  </table>

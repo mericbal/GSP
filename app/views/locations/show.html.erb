@@ -1,0 +1,28 @@
+<div class="container">
+  
+  <h3> Daily List for <em id="red">  <%= @location.name %> </em> </h3>
+  
+  <p> <%= link_to '<- Back', :back, class: 'btn btn-primary btn-sm' %> </p>
+  
+  <%= render 'table' %>
+  
+  <!-- <p> <%= link_to 'Add a new daily', new_location_daily_path(@location), class: 'btn btn-warning btn-lg btn-block' %> </p>   -->
+    
+	<div class="container">
+	  <h3 id="red"> Unpaid = <%= @unpaid.count %> car(s) </h3>
+	  <h3 id="green"> Paid = <%= @paid.count %> car(s) </h3>
+	  <h3 id="blue"> Daily Total = $ <%= @total %> </h3>
+	</div>
+
+
+	<%= render 'layouts/footer' %>
+
+	<br>
+	<br>
+	<br>
+
+	<%= render 'layouts/navbar_bottom' %>
+
+</div>
+
+
