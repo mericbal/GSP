@@ -2,13 +2,13 @@
     
     <div class="field form-group">
       <%= f.label :username %><br />
-      <%= f.text_field :username, autofocus: true, placeholder: 'Username ?', autocomplete: 'on', class: 'form-control' %>
+      <%= f.text_field :username, autofocus: true, placeholder: 'Username ?', autocomplete: 'on', class: 'form-control', required: true %>
       <small id="emailHelp" class="form-text text-muted">We'll never share your username and email with anyone else.</small>
     </div>
 
     <div class="field form-group">
       <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+      <%= f.password_field :password, autocomplete: "off", class: 'form-control', required: true %>
       <small id="passwordHelp" class="form-text text-muted">Yout password is safe with us.</small>
     </div>
 
@@ -24,4 +24,4 @@
     <div class="actions">
       <%= f.submit "Log in", class: 'btn btn-primary' %>
     </div>
-  <% end %>
+<% end %>
