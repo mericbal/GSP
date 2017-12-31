@@ -17,7 +17,7 @@
     </thead>
 
     <% @dailies.each.with_index(1) do |d,i| %>
-      <tbody>
+      <tbody id="dailyTable">
       <% if d.paid %> <tr class="success"> <% else %> <tr class="danger"> <% end %>
         
         <td> <%= i %> </td>
