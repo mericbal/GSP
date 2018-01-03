@@ -25,7 +25,11 @@ class MonthliesController < ApplicationController
 	end
 
 	def update
-		@monthly.update(monthly_params) ? redirect_to location_path @location : render :edit
+		if @monthly.update(monthly_params)
+			redirect_to location_path @location
+		else
+		render :edit
+		end
 	end
 
 	def destroy

@@ -11,6 +11,7 @@ class LocationsController < ApplicationController
 
 	def show
 		@location = Location.find(params[:id])
+		@monthlies = Monthly.where(location_id: @location.id)
 		
 		if params[:sort] then $sort = params[:sort] end
 		

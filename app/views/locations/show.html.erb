@@ -1,30 +1,60 @@
 <div class="container">
   
-  <h3> Daily List for <em id="red">  <%= @location.name %> </em> </h3>
+  <h3> <em id="red"> <%= @location.name %> </em> </h3>
   
-  <p> <%= link_to '<- Back', :back, class: 'btn btn-primary btn-sm' %> </p>
   
   <%= render 'search_field' %>
 
   <br>
 
-  <%= render 'table' %>
+  <ul class="nav nav-pills nav-tabs">
+  	<li class="active"> <%= link_to 'Dailies', '#home', data: { toggle: 'pill' } %> </li>
+    <li> <%= link_to 'Monthlies', '#menu1', data: { toggle: 'pill' } %> </li>
+  </ul>
+
+
+  <div class="tab-content">
     
-  <div class="row textcenter">
-  	
-  	<div class="col-md-3">
-	  	<h3 id="red"> Unpaid = <%= @unpaid.count %> car(s) </h3>
-  	</div>
-  
-		<div class="col-md-3">
-	  	<h3 id="green"> Paid = <%= @paid.count %> car(s) </h3>
-  	</div>
-  
-  	<div class="col-md-3">
-			<h3 id="blue"> Daily Total = $ <%= @total %> </h3>
-	  </div>
-	
-	</div>
+    <div id="home" class="tab-pane fade in active">
+    	<br>
+  		<%= render 'table' %>
+		  
+		  <div class="row textcenter">
+		  	
+		  	<div class="col-md-3">
+			  	<h3 id="red"> Unpaid = <%= @unpaid.count %> car(s) </h3>
+		  	</div>
+		  
+				<div class="col-md-3">
+			  	<h3 id="green"> Paid = <%= @paid.count %> car(s) </h3>
+		  	</div>
+		  
+		  	<div class="col-md-3">
+					<h3 id="blue"> Daily Total = $ <%= @total %> </h3>
+			  </div>
+			
+				<%= render 'layouts/navbar_bottom' %>
+			</div>
+			
+    </div>
+    
+    <div id="menu1" class="tab-pane fade">
+    	<br>
+      <%= @monthlies.count %>
+			
+			<%= render 'layouts/navbar_bottom_monthly' %>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+    
 
 	<%= render 'layouts/footer' %>
 	
@@ -34,7 +64,6 @@
 	<br>
 	<br>
 
-	<%= render 'layouts/navbar_bottom' %>
 
 
 

@@ -9,9 +9,13 @@ Rails.application.routes.draw do
   get '/errors' => 'mains#error'
 
   resources :locations, only: [:show, :index] do 
+    
     resources :dailies, only: [:new, :create, :edit, :update, :destroy] do 
       member { get 'status' }
     end
+
+    resources :monthlies, only: [:new, :create, :edit, :update, :destroy]
+
   end
 
 
