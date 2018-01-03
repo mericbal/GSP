@@ -1,0 +1,15 @@
+<div class="container">
+	
+	<h3>New Monthly Car for <em id="red"> <%= @location.name %> </em> </h3>
+
+	<br>
+
+	<% if @errors %>
+			<% @errors.each do |e| %> <p id="red"> <%= e %> </p> <% end %> 
+	<% end %>
+
+	<%= render 'form_monthly' %>
+
+	<%= link_to '<- Back ', :back, class: 'btn btn-sm btn-primary' %>
+
+</div>
