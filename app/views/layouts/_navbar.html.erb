@@ -18,7 +18,7 @@
             <!-- <li><a href="#about">ABOUT</a></li> -->
             <li> <em class="navbar-brand" id="green"> <%= current_user.username %> </em> </li>
             <li> <em class="navbar-brand"> <%= link_to 'Edit me', edit_user_registration_path, class: 'btn btn-sm btn-warning' %> </em> </li>
-            <li> <em class="navbar-brand"> <%= link_to 'Log out', '#exampleModalCenter' , data: { toggle: 'modal' }, class: 'btn btn-sm btn-danger' %> </em> </li>
+            <li> <em class="navbar-brand"> <%= link_to 'Log out', '#logoutModal' , data: { toggle: 'modal' }, class: 'btn btn-sm btn-danger' %> </em> </li>
           <% end %>
           </ul>
         </div>

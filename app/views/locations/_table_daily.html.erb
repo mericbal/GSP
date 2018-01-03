@@ -2,7 +2,7 @@
   th,td { text-align: center; }
 </style>
 
-<table class="table table-hover table-bordered table-responsive">
+<table class="table table-hover table-responsive table-condensed">
     <thead class="thead-dark">
       <tr class="info">
         <th style="width: 1px"> NO </th>
@@ -17,7 +17,7 @@
     </thead>
 
     <% @dailies.each.with_index(1) do |d,i| %>
-      <tbody id="dailyTable">
+      <tbody id="table">
       <% if d.paid %> <tr class="success"> <% else %> <tr class="danger"> <% end %>
         
         <td> <%= i %> </td>
