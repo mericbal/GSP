@@ -3,7 +3,7 @@ class MonthliesController < ApplicationController
 	include ApplicationHelper
 
 	before_action :setup_location, only: [:new, :create, :destroy, :update, :edit]
-
+	before_action :setup_monthly, only: [:edit, :update, :destroy]
 
 	def new
 		@monthly = Monthly.new
@@ -34,6 +34,10 @@ class MonthliesController < ApplicationController
 	end
 
 	private
+
+	def setup_monthly
+		@monthly = Monthly.find(params[:id])
+	end
 
 	def setup_location
 		@location = Location.find(params[:location_id])	
