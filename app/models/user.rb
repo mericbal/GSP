@@ -9,5 +9,6 @@ class User < ApplicationRecord
 
   # Associations
   has_many :dailies
+  has_many :monthlies
   
 end

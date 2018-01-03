@@ -15,7 +15,7 @@ class DailiesController < ApplicationController
 		@daily.location_id = @location.id
 		@daily.user_id = current_user.id
 		if @daily.save
-			redirect_to location_path(@location)
+			redirect_to location_path(@location), flash: { notice: 'Car has been added successfully !' }
 		else
 			@errors = @daily.errors.full_messages
 			render :new
