@@ -35,7 +35,7 @@
 $(document).ready(function(){
   $("#mySearch").on("keyup", function() {
     var value = $(this).val().toLowerCase();
-    $("#dailyTable tr").filter(function() {
+    $("#table tr").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });

@@ -17,7 +17,7 @@
     
     <div id="home" class="tab-pane fade in active">
     	<br>
-  		<%= render 'table' %>
+  		<%= render 'table_daily' %>
 		  
 		  <div class="row textcenter">
 		  	
@@ -40,7 +40,7 @@
     
     <div id="menu1" class="tab-pane fade">
     	<br>
-      <%= @monthlies.count %>
+      <%= render 'table_monthly' %>
 			
 			<%= render 'layouts/navbar_bottom_monthly' %>
 
