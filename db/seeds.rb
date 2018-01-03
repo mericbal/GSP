@@ -23,11 +23,24 @@ Location.create(name: '21st & Capp Street')
 
 colors = %w( Blue Black Red Gray Silver Yellow Green Gold )
 makes = %w( Honda Toyota BMW Mercedes Ford Cadillac Hyundai Kia Nissan Chevy Subaru Acura )
-
+first = %w( John Mary Mike Chelsea Nil Rym Lily )
+last = %w( Martin Mass Hasbell DelRila Despacito Nilpacito )
 
 100.times do |i|
 	Daily.create(color: colors.sample, make: makes.sample, ticket_no: "180-777", price: 15, user_id: 1, location_id: rand(1..3), paid: false)
 end
 
+10.times do |i|
+	Monthly.create(ticket_no: "#{i+1}",
+								 first: first.sample,
+								 last: last.sample,
+								 phone: '415-416-17-18',
+								 make: makes.sample,
+								 color: colors.sample,
+								 price: 350,
+								 user_id: rand(1..5),
+								 location_id: rand(1..3)
+								 )
+end
 
 p 'Seeding Completed !'
