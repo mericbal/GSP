@@ -22,34 +22,31 @@
 			</div>
 		</div>
 
-		<div class="row col-auto">			
-	    <div class="field form-group col-md-2">
+		<div class="row">			
+	    <div class="field form-group col-md-2 col-xs-5">
 				<%= f.label 'price' %> <span id="red"> * </span>
 				<div class="input-group mb-2 mb-sm-0">
 					<div class="input-group-addon">$</div>
 					<%= f.number_field :price, class: 'form-control' %>
 				</div>
 			</div>
+
+			<fieldset disabled>
+						<div class="field form-group col-md-6 col-xs-8">
+							<%= f.label 'user ?' %>
+							<%= f.text_field :user_id, placeholder: current_user.username, class: 'form-control' %>
+					</div>
+			</fieldset>
 		</div>
-
-		<fieldset disabled>
-			<div class="row">
-					<div class="field form-group col-md-6">
-						<%= f.label 'Will be added by user ?' %>
-						<small class="text-muted"> to check </small>
-						<%= f.text_field :user_id, placeholder: current_user.username, class: 'form-control' %>
-				</div>
-			</div>
-		</fieldset>
-
-		<p id="red"> * fields required </p>
-
-		<br>
 
 		<div class="field form-check">
 			<%= f.label 'paid', class: 'form-check-label' %>
 			<%= f.check_box :paid, class: 'form-check-input' %>
 		</div>
+
+		<br>
+
+		<p> <small id="red"> * fields required ! </small> </p>
 
 		<br>
 			<%= f.submit class: 'btn btn-lg btn-block btn-success' %>

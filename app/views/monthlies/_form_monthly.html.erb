@@ -1,45 +1,61 @@
 <%= form_for [@location, @monthly], class: 'form-inline' do |f| %>
 
-	<div class="field form-group col-md-12">
-		<%= f.label 'Firstname' %>
-		<%= f.text_field :first, class: 'form-control' %>
+	<div class="row">
+		<div class="field form-group col-md-3 col-xs-4">
+			<%= f.label 'Firstname' %>
+			<%= f.text_field :first, class: 'form-control', autofocus: true %>
+		</div>
+
+		<div class="field form-group col-md-3 col-xs-4">
+			<%= f.label 'Lastname' %>
+			<%= f.text_field :last, class: 'form-control' %>
+		</div>
+
+		<div class="field form-group col-md-3 col-xs-4">
+			<%= f.label 'Phone Number' %>
+			<%= f.text_field :phone, class: 'form-control' %>
+		</div>
 	</div>
 
-	<div class="field form-group col-md-12">
-		<%= f.label 'Lastname' %>
-		<%= f.text_field :last, class: 'form-control' %>
+	<br>
+
+	<div class="row">
+		<div class="field form-group col-md-3 col-xs-8">
+			<%= f.label 'Ticket Number' %> 
+			<%= f.text_field :ticket_no, class: 'form-control' %> 
+			<small class="text-muted"> Enter the monthly pass number </small>
+		</div>
+
+		<div class="field form-group col-md-3 col-xs-6">
+			<%= f.label 'Car Make/Model' %>
+			<%= f.text_field :make, class: 'form-control' %>
+		</div>
+
+		<div class="field form-group col-md-3 col-xs-6">
+			<%= f.label 'Car Color' %>
+			<%= f.text_field :color, class: 'form-control' %>
+		</div>
 	</div>
 
-	<div class="field form-group col-md-12">
-		<%= f.label 'Phone Number' %>
-		<%= f.text_field :phone, class: 'form-control' %>
+	<br>
+
+	<div class="row">
+		<div class="field form-group col-md-2 col-xs-4">
+			<%= f.label 'Price' %>
+			<%= f.number_field :price, class: 'form-control' %>
+		</div>
+
+		<div class="field form-group col-md-2 col-xs-4">
+			<%= f.label 'Paid ?' %>
+			<%= f.text_field :paid, class: 'form-control' %>
+			<small class="text-muted" id="red"> Cash or Check ? </small>
+		</div>
 	</div>
 
-	<div class="field form-group col-md-12">
-		<%= f.label 'Car Make' %>
-		<%= f.text_field :make, class: 'form-control' %>
-	</div>
+	<p> <small id="red"> All fields are required ! </small> </p>
 
-	<div class="field form-group col-md-12">
-		<%= f.label 'Car Color' %>
-		<%= f.text_field :color, class: 'form-control' %>
-	</div>
-
-	<div class="field form-group col-md-12">
-		<%= f.label 'Ticket Number' %>
-		<%= f.text_field :ticket_no, class: 'form-control' %>
-	</div>
-
-	<div class="field form-group col-md-12">
-		<%= f.label 'Price' %>
-		<%= f.number_field :price, class: 'form-control' %>
-	</div>
-
-	<div class="field form-group col-md-12">
-		<%= f.label 'Paid ?' %>
-		<%= f.text_field :paid, class: 'form-control' %>
-	</div>
-
+	<br>
 	<%= f.submit class: 'btn btn-lg btn-success btn-block' %>
+	<br>
 
 <% end %>
