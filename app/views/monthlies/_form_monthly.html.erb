@@ -45,10 +45,10 @@
 			<%= f.number_field :price, class: 'form-control' %>
 		</div>
 
-		<div class="field form-group col-md-2 col-xs-4">
+		<div class="field form-group col-md-2 col-xs-6">
 			<%= f.label 'Paid ?' %>
-			<%= f.text_field :paid, class: 'form-control' %>
 			<small class="text-muted" id="red"> Cash or Check ? </small>
+			<%= f.select :paid, ['by Cash', 'by Check'], class: 'form-control', include_blank: true %>
 		</div>
 	</div>
 
