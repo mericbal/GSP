@@ -29,7 +29,7 @@ var marker = new google.maps.Marker({position:myCenter});
 marker.setMap(map);
 }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= GOOGLE_MAPS %>&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS"] %>&callback=myMap"></script>
 
 
 
