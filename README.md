@@ -32,3 +32,7 @@ heroku git:remote -a gsparking
 heroku run rake db:migrate
 heroku run rake db:seed
 
+
+# Deploying API keys to Heroku
+
+heroku config:set EXAMPLE_API=12312313123131313132

@@ -1,37 +1,20 @@
 <div class="container">
+	
+	<h2 style="text-align: center" > Welcome , <span id="red"> <%= current_user.username %> </span> ! </h2>
+	
+	<br>
 
-	<% if !current_user %>
-		<br />
+	<p> Choose a <em id="red"> location </em> please .. </p>
+	
+	<br>
+
+	<% @locations.each.with_index(1) do |l,i| %>
+  	<p> <%= link_to "#{l.name}", location_path(l.id), class: "btn btn-primary btn-lg btn-block" %> </p>
 		<br>
-		<p id="blue"> <%= link_to 'Log in', new_user_session_path, class: 'btn btn-primary btn-lg btn-block' %> </p>
-	<% else %>
-		<h2 style="text-align: center" > Welcome , <span id="red"> <%= current_user.username %> </span> ! </h2>
-		<br />
-
-		<p id=""> Choose a location please .. </p>
-		<br>
-
-		<% @locations.each do |l| %>
-			<p> <%= link_to "#{l.name}", location_path(l.id), class: "btn btn-success btn-lg btn-block" %> </p>
-			<br>
-		<% end %>
-
 	<% end %>
 
-	<!-- Add Google Maps -->
-<div id="googleMap" style="height:400px;width:100%;"></div>
-<script>
-function myMap() {
-var myCenter = new google.maps.LatLng(41.878114, -87.629798);
-var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-var marker = new google.maps.Marker({position:myCenter});
-marker.setMap(map);
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS"] %>&callback=myMap"></script>
-
-
-
-
 </div>
+
+
+
+<!--  -->
