@@ -1,10 +1,40 @@
 <div class="container">
-  
-  <h2 id="red">Log in</h2>
+	
+	<h3> Welcome to <em id="red"> Golden State Parking </em></h3>
 
-  <%= render 'login_form' %>
-  
-  <br>
-  <%= render "devise/shared/link_password" %>
+	<br>
+
+	<p> <%= link_to 'Log In', '#login', class: 'btn btn-primary btn-block' %> </p>
+
+	<br>
+
+	<p> If you are not registered please contact us at <em id="red"><br> (415)-374-0526 </em> </p>
+
+	<h4> or </h4>
+
+	<p> You can visit us during business hours at <em id="red"><br> 3434 17th Street </em> .</p>
+
+	<br>
+
+	<div id="googleMap" style="height:400px;width:100%;"></div>
+
+	<%= render 'layouts/script' %>
+
+<!--  -->
+
+	<div id="login">
+		
+	  <h3><em id="red"> Log in </em></h3>
+
+	  <%= render 'login_form' %>
+	  
+	  <br>
+	  <%= render "devise/shared/link_password" %>
+
+	  <br>
+
+	  <%= render 'layouts/footer' %>
  
+	</div>
+
 </div>

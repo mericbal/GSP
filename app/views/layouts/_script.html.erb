@@ -28,6 +28,31 @@
 </script>
 
 
+
+<!-- 
+  For login button scroll down on mainpage
+ -->
+
+<script>
+  $(document).ready(function() {
+    $("div a[href='#login']").on('click', function(event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+
+        var hash = this.hash;
+
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 1500, function(){
+          window.location.hash = hash;
+        })
+      }
+    })
+  })
+  
+</script>
+
+
 <!-- 
   table filter
  -->
@@ -41,3 +66,21 @@ $(document).ready(function(){
   });
 });
 </script>
+
+
+
+<!-- 
+  Google MAps fo 17th street
+ -->
+
+<script>
+  function myMap() {
+  var myCenter = new google.maps.LatLng(37.763404, -122.422360);
+  var mapProp = {center:myCenter, zoom:16, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+  var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+  }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS"] %>&callback=myMap"></script>

@@ -1,20 +1,21 @@
 <div class="container">
 	
-	<h2 style="text-align: center" > Welcome , <span id="red"> <%= current_user.username %> </span> ! </h2>
-	
-	<br>
-
-	<p> Choose a <em id="red"> location </em> please .. </p>
-	
-	<br>
-
-	<% @locations.each.with_index(1) do |l,i| %>
-  	<p> <%= link_to "#{l.name}", location_path(l.id), class: "btn btn-primary btn-lg btn-block" %> </p>
+		<h2 style="text-align: center" > Welcome , <span id="red"> <%= current_user.username %> </span> ! </h2>
+		
 		<br>
-	<% end %>
+
+		<p> Choose a <em id="red"> location </em> please .. </p>
+		
+		<br>
+
+		<% @locations.each.with_index(1) do |l,i| %>
+	  	<p> <%= link_to "#{l.name}", location_path(l.id), class: "btn btn-primary btn-lg btn-block" %> </p>
+			<br>
+		<% end %>
+
+	<br>
 
 </div>
-
 
 
 <!--  -->

@@ -2,14 +2,14 @@
     
     <div class="field form-group">
       <%= f.label :username %><br />
-      <%= f.text_field :username, autofocus: true, placeholder: 'Username ?', autocomplete: 'on', class: 'form-control', required: true %>
+      <%= f.text_field :username, autofocus: false, placeholder: 'Username ?', autocomplete: 'on', class: 'form-control', required: true %>
       <small id="emailHelp" class="form-text text-muted">We'll never share your username and email with anyone else.</small>
     </div>
 
     <div class="field form-group">
       <%= f.label :password %><br />
       <%= f.password_field :password, autocomplete: "off", class: 'form-control', required: true %>
-      <small id="passwordHelp" class="form-text text-muted">Yout password is safe with us.</small>
+      <small id="passwordHelp" class="form-text text-muted">Your password is safe with us.</small>
     </div>
 
     <% if devise_mapping.rememberable? -%>

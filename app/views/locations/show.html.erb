@@ -10,6 +10,7 @@
   <ul class="nav nav-pills nav-tabs">
   	<li class="active"> <%= link_to 'Dailies', '#home', data: { toggle: 'pill' } %> </li>
     <li> <%= link_to 'Monthlies', '#menu1', data: { toggle: 'pill' } %> </li>
+    <li> <%= link_to 'Location', '#menu2', data: { toggle: 'pill' } %> </li>
   </ul>
 
 
@@ -43,19 +44,18 @@
       <%= render 'table_monthly' %>
 			
 			<%= render 'layouts/navbar_bottom_monthly' %>
+		</div>
 
-    </div>
+		<div id="menu2" class="tab-pane fade" >
+			
+		 	N/A
 
-  </div>
+		</div>
 
+	</div>
 
-
-
-
-
-
-    
-
+	<br>
+	<br>
 	<%= render 'layouts/footer' %>
 	
 	<%= render 'layouts/script' %>
@@ -63,9 +63,5 @@
 	<br>
 	<br>
 	<br>
-
-
-
-
 
 </div>
