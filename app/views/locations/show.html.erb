@@ -31,7 +31,7 @@
 		  	</div>
 		  
 		  	<div class="col-md-3">
-					<h3 id="blue"> Daily Total = $ <%= @total %> </h3>
+					<h3 id="blue"> Daily Total = $ <%= @total ? @total : '0' %> </h3>
 			  </div>
 			
 				<%= render 'layouts/navbar_bottom' %>
