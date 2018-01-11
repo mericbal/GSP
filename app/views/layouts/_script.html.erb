@@ -1,7 +1,7 @@
-<!-- 
-  For Footer 
- -->
 <script>
+
+ // For Footer
+
   $(document).ready(function(){
     // Add smooth scrolling to all links in navbar + footer link
     $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
@@ -25,15 +25,10 @@
       } // End if
     });
   })
-</script>
 
+ 
+  // For login button scroll down on mainpage
 
-
-<!-- 
-  For login button scroll down on mainpage
- -->
-
-<script>
   $(document).ready(function() {
     $("div a[href='#login']").on('click', function(event) {
       if (this.hash !== "") {
@@ -50,16 +45,9 @@
     })
   })
   
-</script>
 
+  // Google MAps fo 17th street
 
-
-
-<!-- 
-  Google MAps fo 17th street
- -->
-
-<script>
   function myMap() {
   var myCenter = new google.maps.LatLng(37.763404, -122.422360);
   var mapProp = {center:myCenter, zoom:16, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
@@ -67,25 +55,24 @@
   var marker = new google.maps.Marker({position:myCenter});
   marker.setMap(map);
   }
+
+
+  
+  // table filter
+
+  $(document).ready(function(){
+    $("#mySearch").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#table tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+
+
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS"] %>&callback=myMap"></script>
-
-
-
-<!-- 
-  table filter
- -->
-<script>
-$(document).ready(function(){
-  $("#mySearch").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#table tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script>
 
 
 
@@ -105,8 +92,8 @@ $(document).ready(function(){
 
   $(document).ready(function() {
     $('#paid').click(function(event) {
-      event.preventDefault()
-      alert('MMMM')
+      // event.preventDefault()
+      // alert('MMMM')
     })
   })
 
@@ -114,9 +101,4 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
+<!--  -->

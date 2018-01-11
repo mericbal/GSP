@@ -8,15 +8,17 @@
   <br>
 
   <ul class="nav nav-pills nav-tabs">
-  	<li> <%= link_to 'Dailies', '#home', data: { toggle: 'pill' } %> </li>
+  	<li class="active"> <%= link_to 'Dailies', '#home', data: { toggle: 'pill' } %> </li>
     <li> <%= link_to 'Monthlies', '#menu1', data: { toggle: 'pill' } %> </li>
-    <li class="active"> <%= link_to 'Location', '#menu2', data: { toggle: 'pill' } %> </li>
+    <% if current_user.username == 'meric' %>
+    <li> <%= link_to 'Location', '#menu2', data: { toggle: 'pill' } %> </li>
+    <% end %>
   </ul>
 
 
   <div class="tab-content">
     
-    <div id="home" class="tab-pane fade">
+    <div id="home" class="tab-pane fade in active">
     	<br>
   		<%= render 'table_daily' %>
 		  
@@ -48,7 +50,7 @@
 
 			
 		<% if current_user.username == 'meric' %>
-		<div id="menu2" class="tab-pane fade in active" >
+		<div id="menu2" class="tab-pane fade" >
 				
 			<%= link_to 'show div', '#', class: 'btn btn-primary btn-lg', id: 'show-link' %>
 
@@ -56,6 +58,7 @@
 				
 		 		<h2 id="red" class="textcenter">
 		 		
+		 			TEST DIVISION
 
 		 		</h2>
 			
