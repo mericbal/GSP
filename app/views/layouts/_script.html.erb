@@ -53,20 +53,6 @@
 </script>
 
 
-<!-- 
-  table filter
- -->
-<script>
-$(document).ready(function(){
-  $("#mySearch").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#table tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script>
-
 
 
 <!-- 
@@ -84,3 +70,53 @@ $(document).ready(function(){
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS"] %>&callback=myMap"></script>
+
+
+
+<!-- 
+  table filter
+ -->
+<script>
+$(document).ready(function(){
+  $("#mySearch").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#table tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+
+
+<!-- 
+  For test
+ -->
+
+<script>
+  
+  $(document).ready(function(){
+    $('#show-link').on('click', function(e) {
+      e.preventDefault
+      $('#testdiv').hide()
+      // alert('Clicked !')
+    })
+  })
+
+  $(document).ready(function() {
+    $('#paid').click(function(event) {
+      event.preventDefault()
+      alert('MMMM')
+    })
+  })
+
+</script>
+
+
+
+
+
+
+
+
+
